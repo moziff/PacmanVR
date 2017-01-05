@@ -1,0 +1,150 @@
+﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+public class Waypoint : MonoBehaviour {
+	public List<Vector3> waypoints_list;
+	public Dictionary<Vector3, List<Vector3>> waypoints_dict;
+	// Use this for initialization
+	void Start () {
+		waypoints_list = new List<Vector3> ();
+		waypoints_dict = new Dictionary<Vector3, List<Vector3>> ();
+		foreach(Transform child in transform){
+			waypoints_list.Add (child.position);
+		}
+		List<Vector3> waypoints0 = new List<Vector3> (){waypoints_list[1],waypoints_list[15],waypoints_list[7]};
+		List<Vector3> waypoints1 = new List<Vector3> (){waypoints_list[0],waypoints_list[2]};
+		List<Vector3> waypoints2 = new List<Vector3> (){waypoints_list[63],waypoints_list[1],waypoints_list[3]};
+		List<Vector3> waypoints3 = new List<Vector3> (){waypoints_list[2],waypoints_list[49],waypoints_list[4]};
+		List<Vector3> waypoints4 = new List<Vector3> (){waypoints_list[3],waypoints_list[5],waypoints_list[44]};
+		List<Vector3> waypoints5 = new List<Vector3> (){waypoints_list[6],waypoints_list[4],waypoints_list[30]};
+		List<Vector3> waypoints6 = new List<Vector3> (){waypoints_list[7],waypoints_list[5]};
+		List<Vector3> waypoints7 = new List<Vector3> (){waypoints_list[1],waypoints_list[8],waypoints_list[6]};
+		List<Vector3> waypoints8 = new List<Vector3> (){waypoints_list[7],waypoints_list[9]};
+		List<Vector3> waypoints9 = new List<Vector3> (){waypoints_list[8],waypoints_list[10]};
+		List<Vector3> waypoints10 = new List<Vector3> (){waypoints_list[11],waypoints_list[9],waypoints_list[29]};
+		List<Vector3> waypoints11 = new List<Vector3> (){waypoints_list[12],waypoints_list[28],waypoints_list[10]};
+		// CHECK OUT number 12
+		List<Vector3> waypoints12 = new List<Vector3> (){waypoints_list[13],waypoints_list[16],waypoints_list[11]};
+		List<Vector3> waypoints13 = new List<Vector3> (){waypoints_list[20],waypoints_list[14],waypoints_list[12]};
+		List<Vector3> waypoints14 = new List<Vector3> (){waypoints_list[13],waypoints_list[15]};
+		List<Vector3> waypoints15 = new List<Vector3> (){waypoints_list[14],waypoints_list[0]};
+		List<Vector3> waypoints16 = new List<Vector3> (){waypoints_list[17],waypoints_list[12]};
+		List<Vector3> waypoints17 = new List<Vector3> (){waypoints_list[18],waypoints_list[20],waypoints_list[16]};
+		List<Vector3> waypoints18 = new List<Vector3> (){waypoints_list[19],waypoints_list[17]};
+		List<Vector3> waypoints19 = new List<Vector3> (){waypoints_list[18],waypoints_list[22],waypoints_list[20]};
+		List<Vector3> waypoints20 = new List<Vector3> (){waypoints_list[19],waypoints_list[17],waypoints_list[21],waypoints_list[13]};
+		List<Vector3> waypoints21 = new List<Vector3> (){waypoints_list[22],waypoints_list[20],waypoints_list[63]};
+		List<Vector3> waypoints22 = new List<Vector3> (){waypoints_list[19],waypoints_list[21]};
+		List<Vector3> waypoints23 = new List<Vector3> (){waypoints_list[29],waypoints_list[30],waypoints_list[24]};
+		List<Vector3> waypoints24 = new List<Vector3> (){waypoints_list[23],waypoints_list[25]};
+		List<Vector3> waypoints25 = new List<Vector3> (){waypoints_list[29],waypoints_list[26],waypoints_list[24]};
+		List<Vector3> waypoints26 = new List<Vector3> (){waypoints_list[27],waypoints_list[25]};
+		List<Vector3> waypoints27 = new List<Vector3> (){waypoints_list[28],waypoints_list[29],waypoints_list[26]};
+		List<Vector3> waypoints28 = new List<Vector3> (){waypoints_list[11],waypoints_list[27]};
+		List<Vector3> waypoints29 = new List<Vector3> (){waypoints_list[10],waypoints_list[27],waypoints_list[23],waypoints_list[25]};
+		List<Vector3> waypoints30 = new List<Vector3> (){waypoints_list[5],waypoints_list[23],waypoints_list[31],waypoints_list[65]};
+		List<Vector3> waypoints31 = new List<Vector3> (){waypoints_list[44],waypoints_list[30],waypoints_list[42],waypoints_list[32]};
+		List<Vector3> waypoints32 = new List<Vector3> (){waypoints_list[31],waypoints_list[33]};
+		List<Vector3> waypoints33 = new List<Vector3> (){waypoints_list[34],waypoints_list[32]};
+		List<Vector3> waypoints34 = new List<Vector3> (){waypoints_list[35],waypoints_list[33]};
+		List<Vector3> waypoints35 = new List<Vector3> (){waypoints_list[43],waypoints_list[34],waypoints_list[36]};
+		List<Vector3> waypoints36 = new List<Vector3> (){waypoints_list[35],waypoints_list[37]};
+		List<Vector3> waypoints37 = new List<Vector3> (){waypoints_list[38],waypoints_list[36]};
+		List<Vector3> waypoints38 = new List<Vector3> (){waypoints_list[57],waypoints_list[39],waypoints_list[37]};
+		List<Vector3> waypoints39 = new List<Vector3> (){waypoints_list[38],waypoints_list[40]};
+		List<Vector3> waypoints40 = new List<Vector3> (){waypoints_list[39],waypoints_list[41]};
+		List<Vector3> waypoints41 = new List<Vector3> (){waypoints_list[46],waypoints_list[40],waypoints_list[42]};
+		List<Vector3> waypoints42 = new List<Vector3> (){waypoints_list[41],waypoints_list[31],waypoints_list[43]};
+		List<Vector3> waypoints43 = new List<Vector3> (){waypoints_list[42],waypoints_list[35]};
+		List<Vector3> waypoints44 = new List<Vector3> (){waypoints_list[45],waypoints_list[4],waypoints_list[31]};
+		List<Vector3> waypoints45 = new List<Vector3> (){waypoints_list[46],waypoints_list[44]};
+		List<Vector3> waypoints46 = new List<Vector3> (){waypoints_list[47],waypoints_list[45],waypoints_list[41]};
+		List<Vector3> waypoints47 = new List<Vector3> (){waypoints_list[60],waypoints_list[48],waypoints_list[46]};
+		List<Vector3> waypoints48 = new List<Vector3> (){waypoints_list[49],waypoints_list[47]};
+		List<Vector3> waypoints49 = new List<Vector3> (){waypoints_list[50],waypoints_list[3],waypoints_list[48]};
+		List<Vector3> waypoints50 = new List<Vector3> (){waypoints_list[51],waypoints_list[63],waypoints_list[61],waypoints_list[49]};
+		List<Vector3> waypoints51 = new List<Vector3> (){waypoints_list[52],waypoints_list[50]};
+		List<Vector3> waypoints52 = new List<Vector3> (){waypoints_list[51],waypoints_list[53]};
+		List<Vector3> waypoints53 = new List<Vector3> (){waypoints_list[52],waypoints_list[54]};
+		List<Vector3> waypoints54 = new List<Vector3> (){waypoints_list[55],waypoints_list[53],waypoints_list[62]};
+		List<Vector3> waypoints55 = new List<Vector3> (){waypoints_list[56],waypoints_list[54]};
+		List<Vector3> waypoints56 = new List<Vector3> (){waypoints_list[55],waypoints_list[57]};
+		List<Vector3> waypoints57 = new List<Vector3> (){waypoints_list[56],waypoints_list[58],waypoints_list[38]};
+		List<Vector3> waypoints58 = new List<Vector3> (){waypoints_list[59],waypoints_list[57]};
+		List<Vector3> waypoints59 = new List<Vector3> (){waypoints_list[60],waypoints_list[58]};
+		List<Vector3> waypoints60 = new List<Vector3> (){waypoints_list[61],waypoints_list[59],waypoints_list[47]};
+		List<Vector3> waypoints61 = new List<Vector3> (){waypoints_list[50],waypoints_list[62],waypoints_list[60]};
+		List<Vector3> waypoints62 = new List<Vector3> (){waypoints_list[54],waypoints_list[61]};
+		List<Vector3> waypoints63 = new List<Vector3> (){waypoints_list[64],waypoints_list[21],waypoints_list[50],waypoints_list[2]};
+		waypoints_dict.Add(waypoints_list[0],waypoints0);
+		waypoints_dict.Add(waypoints_list[1],waypoints1);
+		waypoints_dict.Add(waypoints_list[2],waypoints2);
+		waypoints_dict.Add(waypoints_list[3],waypoints3);
+		waypoints_dict.Add(waypoints_list[4],waypoints4);
+		waypoints_dict.Add(waypoints_list[5],waypoints5);
+		waypoints_dict.Add(waypoints_list[6],waypoints6);
+		waypoints_dict.Add(waypoints_list[7],waypoints7);
+		waypoints_dict.Add(waypoints_list[8],waypoints8);
+		waypoints_dict.Add(waypoints_list[9],waypoints9);
+		waypoints_dict.Add(waypoints_list[10],waypoints10);
+		waypoints_dict.Add(waypoints_list[11],waypoints11);
+		waypoints_dict.Add(waypoints_list[12],waypoints12);
+		waypoints_dict.Add(waypoints_list[13],waypoints13);
+		waypoints_dict.Add(waypoints_list[14],waypoints14);
+		waypoints_dict.Add(waypoints_list[15],waypoints15);
+		waypoints_dict.Add(waypoints_list[16],waypoints16);
+		waypoints_dict.Add(waypoints_list[17],waypoints17);
+		waypoints_dict.Add(waypoints_list[18],waypoints18);
+		waypoints_dict.Add(waypoints_list[19],waypoints19);
+		waypoints_dict.Add(waypoints_list[20],waypoints20);
+		waypoints_dict.Add(waypoints_list[21],waypoints21);
+		waypoints_dict.Add(waypoints_list[22],waypoints22);
+		waypoints_dict.Add(waypoints_list[23],waypoints23);
+		waypoints_dict.Add(waypoints_list[24],waypoints24);
+		waypoints_dict.Add(waypoints_list[25],waypoints25);
+		waypoints_dict.Add(waypoints_list[26],waypoints26);
+		waypoints_dict.Add(waypoints_list[27],waypoints27);
+		waypoints_dict.Add(waypoints_list[28],waypoints28);
+		waypoints_dict.Add(waypoints_list[29],waypoints29);
+		waypoints_dict.Add(waypoints_list[30],waypoints30);
+		waypoints_dict.Add(waypoints_list[31],waypoints31);
+		waypoints_dict.Add(waypoints_list[32],waypoints32);
+		waypoints_dict.Add(waypoints_list[33],waypoints33);
+		waypoints_dict.Add(waypoints_list[34],waypoints34);
+		waypoints_dict.Add(waypoints_list[35],waypoints35);
+		waypoints_dict.Add(waypoints_list[36],waypoints36);
+		waypoints_dict.Add(waypoints_list[37],waypoints37);
+		waypoints_dict.Add(waypoints_list[38],waypoints38);
+		waypoints_dict.Add(waypoints_list[39],waypoints39);
+		waypoints_dict.Add(waypoints_list[40],waypoints40);
+		waypoints_dict.Add(waypoints_list[41],waypoints41);
+		waypoints_dict.Add(waypoints_list[42],waypoints42);
+		waypoints_dict.Add(waypoints_list[43],waypoints43);
+		waypoints_dict.Add(waypoints_list[44],waypoints44);
+		waypoints_dict.Add(waypoints_list[45],waypoints45);
+		waypoints_dict.Add(waypoints_list[46],waypoints46);
+		waypoints_dict.Add(waypoints_list[47],waypoints47);
+		waypoints_dict.Add(waypoints_list[48],waypoints48);
+		waypoints_dict.Add(waypoints_list[49],waypoints49);
+		waypoints_dict.Add(waypoints_list[50],waypoints50);
+		waypoints_dict.Add(waypoints_list[51],waypoints51);
+		waypoints_dict.Add(waypoints_list[52],waypoints52);
+		waypoints_dict.Add(waypoints_list[53],waypoints53);
+		waypoints_dict.Add(waypoints_list[54],waypoints54);
+		waypoints_dict.Add(waypoints_list[55],waypoints55);
+		waypoints_dict.Add(waypoints_list[56],waypoints56);
+		waypoints_dict.Add(waypoints_list[57],waypoints57);
+		waypoints_dict.Add(waypoints_list[58],waypoints58);
+		waypoints_dict.Add(waypoints_list[59],waypoints59);
+		waypoints_dict.Add(waypoints_list[60],waypoints60);
+		waypoints_dict.Add(waypoints_list[61],waypoints61);
+		waypoints_dict.Add(waypoints_list[62],waypoints62);
+		waypoints_dict.Add(waypoints_list[63],waypoints63);
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	
+	}
+}

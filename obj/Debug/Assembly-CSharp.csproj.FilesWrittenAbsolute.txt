@@ -1,0 +1,14 @@
+/Users/matteoziff/Development/Unity/PacmanVR-True/Temp/bin/Debug/UnityEngine.dll
+/Users/matteoziff/Development/Unity/PacmanVR-True/Temp/bin/Debug/UnityEditor.dll
+/Users/matteoziff/Development/Unity/PacmanVR-True/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/matteoziff/Development/Unity/PacmanVR-True/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/matteoziff/Development/Unity/PacmanVR-True/Temp/bin/Debug/Google.ProtocolBuffers.dll
+/Users/matteoziff/Development/Unity/PacmanVR-True/Temp/bin/Debug/Mono.Cecil.dll
+/Users/matteoziff/Development/Unity/PacmanVR-True/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/matteoziff/Development/Unity/PacmanVR-True/Temp/bin/Debug/Unity.DataContract.dll
+/Users/matteoziff/Development/Unity/PacmanVR-True/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/matteoziff/Development/Unity/PacmanVR-True/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/matteoziff/Development/Unity/PacmanVR-True/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/matteoziff/Development/Unity/PacmanVR-True/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/matteoziff/Development/Unity/PacmanVR-True/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/matteoziff/Development/Unity/PacmanVR-True/Temp/bin/Debug/Mono.Cecil.Mdb.dll
