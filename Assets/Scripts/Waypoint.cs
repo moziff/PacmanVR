@@ -13,12 +13,12 @@ public class Waypoint : MonoBehaviour {
 			waypoints_list.Add (child.position);
 		}
 		List<Vector3> waypoints0 = new List<Vector3> (){waypoints_list[1],waypoints_list[15],waypoints_list[7]};
-		List<Vector3> waypoints1 = new List<Vector3> (){waypoints_list[0],waypoints_list[2]};
+		List<Vector3> waypoints1 = new List<Vector3> (){waypoints_list[6],waypoints_list[2]};
 		List<Vector3> waypoints2 = new List<Vector3> (){waypoints_list[63],waypoints_list[1],waypoints_list[3]};
 		List<Vector3> waypoints3 = new List<Vector3> (){waypoints_list[2],waypoints_list[49],waypoints_list[4]};
 		List<Vector3> waypoints4 = new List<Vector3> (){waypoints_list[3],waypoints_list[5],waypoints_list[44]};
 		List<Vector3> waypoints5 = new List<Vector3> (){waypoints_list[6],waypoints_list[4],waypoints_list[30]};
-		List<Vector3> waypoints6 = new List<Vector3> (){waypoints_list[7],waypoints_list[5]};
+		List<Vector3> waypoints6 = new List<Vector3> (){waypoints_list[1],waypoints_list[5]};
 		List<Vector3> waypoints7 = new List<Vector3> (){waypoints_list[1],waypoints_list[8],waypoints_list[6]};
 		List<Vector3> waypoints8 = new List<Vector3> (){waypoints_list[7],waypoints_list[9]};
 		List<Vector3> waypoints9 = new List<Vector3> (){waypoints_list[8],waypoints_list[10]};
@@ -53,7 +53,7 @@ public class Waypoint : MonoBehaviour {
 		List<Vector3> waypoints38 = new List<Vector3> (){waypoints_list[57],waypoints_list[39],waypoints_list[37]};
 		List<Vector3> waypoints39 = new List<Vector3> (){waypoints_list[38],waypoints_list[40]};
 		List<Vector3> waypoints40 = new List<Vector3> (){waypoints_list[39],waypoints_list[41]};
-		List<Vector3> waypoints41 = new List<Vector3> (){waypoints_list[46],waypoints_list[40],waypoints_list[42]};
+		List<Vector3> waypoints41 = new List<Vector3> (){waypoints_list[60],waypoints_list[40],waypoints_list[42]};
 		List<Vector3> waypoints42 = new List<Vector3> (){waypoints_list[41],waypoints_list[31],waypoints_list[43]};
 		List<Vector3> waypoints43 = new List<Vector3> (){waypoints_list[42],waypoints_list[35]};
 		List<Vector3> waypoints44 = new List<Vector3> (){waypoints_list[45],waypoints_list[4],waypoints_list[31]};
@@ -72,10 +72,14 @@ public class Waypoint : MonoBehaviour {
 		List<Vector3> waypoints57 = new List<Vector3> (){waypoints_list[56],waypoints_list[58],waypoints_list[38]};
 		List<Vector3> waypoints58 = new List<Vector3> (){waypoints_list[59],waypoints_list[57]};
 		List<Vector3> waypoints59 = new List<Vector3> (){waypoints_list[60],waypoints_list[58]};
-		List<Vector3> waypoints60 = new List<Vector3> (){waypoints_list[61],waypoints_list[59],waypoints_list[47]};
+		List<Vector3> waypoints60 = new List<Vector3> (){waypoints_list[61],waypoints_list[59],waypoints_list[41]};
 		List<Vector3> waypoints61 = new List<Vector3> (){waypoints_list[50],waypoints_list[62],waypoints_list[60]};
 		List<Vector3> waypoints62 = new List<Vector3> (){waypoints_list[54],waypoints_list[61]};
 		List<Vector3> waypoints63 = new List<Vector3> (){waypoints_list[64],waypoints_list[21],waypoints_list[50],waypoints_list[2]};
+		List<Vector3> waypoints64 = new List<Vector3> (){waypoints_list[0],waypoints_list[7]};
+		List<Vector3> waypoints65 = new List<Vector3> (){waypoints_list[66]};
+		List<Vector3> waypoints66 = new List<Vector3> (){waypoints_list[30]};
+		List<Vector3> waypoints67 = new List<Vector3> (){waypoints_list[63]};
 		waypoints_dict.Add(0,waypoints0);
 		waypoints_dict.Add(1,waypoints1);
 		waypoints_dict.Add(2,waypoints2);
@@ -140,6 +144,10 @@ public class Waypoint : MonoBehaviour {
 		waypoints_dict.Add(61,waypoints61);
 		waypoints_dict.Add(62,waypoints62);
 		waypoints_dict.Add(63,waypoints63);
+		waypoints_dict.Add(64,waypoints66);
+		waypoints_dict.Add(65,waypoints67);
+		waypoints_dict.Add(66,waypoints64);
+		waypoints_dict.Add(67,waypoints65);
 	}
 	
 	// Update is called once per frame
