@@ -16,7 +16,6 @@ public class Pacman : MonoBehaviour {
 
 	void OnCollisionEnter(Collision col){
 		if (col.gameObject.GetComponent<Biscuit> ()) {
-			print ("triggered");
 			sk.IncrementScore (col.gameObject.GetComponent<Biscuit> ().value);
 			Destroy (col.gameObject);
 		} else if (col.gameObject.GetComponent<PowerPellet> ()) {
