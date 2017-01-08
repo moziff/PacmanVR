@@ -5,6 +5,6 @@ public class Teleporter : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col){
 		print ("triggered");
-		col.transform.position = new Vector3 (-col.transform.position.x, col.transform.position.y, col.transform.position.z);
+		col.transform.position = new Vector3 (-(col.transform.position.x-1.5f), col.transform.position.y, col.transform.position.z);
 	}
 }

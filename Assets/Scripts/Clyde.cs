@@ -120,7 +120,7 @@ public class Clyde : MonoBehaviour {
 	IEnumerator MonsterPenFuntion(){
 		nextPoint = wp.waypoints_list [66];
 
-		yield return new WaitForSeconds (1f);
+		yield return new WaitForSeconds (14f);
 
 		MoveTo (nextPoint);
 		start = true;

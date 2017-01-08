@@ -2,11 +2,13 @@
 using System.Collections;
 
 public class Pacman : MonoBehaviour {
-
+	private AudioSource source;
 	private ScoreKeeper sk;
 	// Use this for initialization
 	void Start () {
 		sk = FindObjectOfType<ScoreKeeper> ();
+		source = GetComponent<AudioSource> ();
+
 	}
 
 	// Update is called once per frame
@@ -16,6 +18,7 @@ public class Pacman : MonoBehaviour {
 
 	void OnCollisionEnter(Collision col){
 		if (col.gameObject.GetComponent<Biscuit> ()) {
+			source.Play ();
 			sk.IncrementScore (col.gameObject.GetComponent<Biscuit> ().value);
 //			GetComponent<Movement>().speed=.9*GetComponent<Movement>().speed
 			Destroy (col.gameObject);
