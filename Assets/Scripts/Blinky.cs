@@ -7,6 +7,7 @@ public class Blinky : MonoBehaviour {
 //	private NavMeshAgent agent;
 	public Transform goal;
 	public float speed=6.8f;
+	public float initialSpeed;
 	public Transform scatterGoal;
 
 	private Waypoint wp;
@@ -15,15 +16,18 @@ public class Blinky : MonoBehaviour {
 	private float remainingDistance;
 	private float dirNum;
 	private float frontNum;
-	private bool scatter;
+
 	private Vector3 trueGoal;
+
+	public bool scatter=false;
+	public bool frightened=false;
 	// Use this for initialization
 	void Start () {
 		
 		rb = GetComponent<Rigidbody> ();
 
 		wp = FindObjectOfType<Waypoint> ().GetComponent<Waypoint> ();
-
+		initialSpeed = speed;
 //		agent = GetComponent<NavMeshAgent>();
 		scatter = false;
 		nextPoint = wp.waypoints_list [66];
@@ -36,11 +40,7 @@ public class Blinky : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (scatter) {
-			trueGoal = scatterGoal.position;
-		} else {
-			trueGoal = goal.position;
-		}
+		
 		remainingDistance =Vector3.Distance(transform.position, nextPoint);
 
 		if (remainingDistance < 0.5f & (transform.position.x < -50f || transform.position.x > 50f)) {
@@ -58,7 +58,11 @@ public class Blinky : MonoBehaviour {
 	}
 
 	void MoveTo(Vector3 vec){
-		
+		if (scatter) {
+			trueGoal = scatterGoal.position;
+		} else {
+			trueGoal = goal.position;
+		}
 //		print (wp.waypoints_list.Contains (vec));
 		int pos = wp.waypoints_list.IndexOf (vec);
 
@@ -87,7 +91,12 @@ public class Blinky : MonoBehaviour {
 //		print (distances.IndexOf (distances.Min ()));
 		List<Vector3> nextList = wp.waypoints_dict [pos];
 
-		nextPoint = nextList [distances.IndexOf (distances.Min ())];
+		if (frightened) {
+			int num = Random.Range (0, nextList.Count ()-1);
+			nextPoint = nextList[num];
+		} else {
+			nextPoint = nextList [distances.IndexOf (distances.Min ())];
+		}	
 
 		remainingDistance =Vector3.Distance(transform.position, nextPoint);
 
@@ -106,5 +115,9 @@ public class Blinky : MonoBehaviour {
 		} else {
 			return 0f;
 		}
+	}
+
+	public void FrightenedGhost(){
+		speed = speed * .5f;
 	}
 }

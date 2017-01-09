@@ -22,4 +22,8 @@ public class Movement : MonoBehaviour {
 		}
 
 	}
+
+	public void Move(){
+		transform.position = transform.position + Camera.main.transform.forward * speed * Time.deltaTime;
+	}
 }

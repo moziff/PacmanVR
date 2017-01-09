@@ -137,8 +137,10 @@
      <Compile Include="Assets\Scripts\Blinky.cs" />
      <Compile Include="Assets\Scripts\Clyde.cs" />
      <Compile Include="Assets\Scripts\Ghost.cs" />
+     <Compile Include="Assets\Scripts\Ghosts.cs" />
      <Compile Include="Assets\Scripts\Inky.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
+     <Compile Include="Assets\Scripts\Menu.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
      <Compile Include="Assets\Scripts\Pacman.cs" />
      <Compile Include="Assets\Scripts\Pinky.cs" />

@@ -6,6 +6,7 @@ using System.Linq;
 public class Pinky : MonoBehaviour {
 	public Transform goal;
 	public float speed=6.5f;
+	public float initialSpeed;
 	public Transform scatterGoal;
 
 	private Waypoint wp;
@@ -16,14 +17,16 @@ public class Pinky : MonoBehaviour {
 	private float frontNum;
 	private Vector3 trueGoal;
 	private bool start;
-	private bool scatter;
+
+	public bool scatter=false;
+	public bool frightened=false;
 	// Use this for initialization
 	void Start () {
 
 		rb = GetComponent<Rigidbody> ();
 
 		wp = FindObjectOfType<Waypoint> ().GetComponent<Waypoint> ();
-
+		initialSpeed = speed;
 		//		agent = GetComponent<NavMeshAgent>();
 		start = false;
 
@@ -37,11 +40,7 @@ public class Pinky : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (scatter) {
-			trueGoal = scatterGoal.position;
-		} else {
-			trueGoal = goal.position;
-		}
+		
 		if (start) {
 
 			remainingDistance = Vector3.Distance (transform.position, nextPoint);
@@ -60,7 +59,11 @@ public class Pinky : MonoBehaviour {
 	}
 
 	void MoveTo(Vector3 vec){
-
+		if (scatter) {
+			trueGoal = scatterGoal.position;
+		} else {
+			trueGoal = goal.position;
+		}
 		//		print (wp.waypoints_list.Contains (vec));
 		int pos = wp.waypoints_list.IndexOf (vec);
 
@@ -90,7 +93,12 @@ public class Pinky : MonoBehaviour {
 		//		print (distances.IndexOf (distances.Min ()));
 		List<Vector3> nextList = wp.waypoints_dict [pos];
 
-		nextPoint = nextList [distances.IndexOf (distances.Min ())];
+		if (frightened) {
+			int num = Random.Range (0, nextList.Count ()-1);
+			nextPoint = nextList[num];
+		} else {
+			nextPoint = nextList [distances.IndexOf (distances.Min ())];
+		}	
 
 		remainingDistance =Vector3.Distance(transform.position, nextPoint);
 

@@ -7,6 +7,7 @@ public class Inky : MonoBehaviour {
 	public Transform goal;
 	public Transform blinky;
 	public float speed=6.5f;
+	public float initialSpeed;
 	public Transform scatterGoal;
 
 	private Waypoint wp;
@@ -17,14 +18,16 @@ public class Inky : MonoBehaviour {
 	private float frontNum;
 	private Vector3 trueGoal;
 	private bool start;
-	private bool scatter;
+
+	public bool scatter=false;
+	public bool frightened=false;
 	// Use this for initialization
 	void Start () {
 
 		rb = GetComponent<Rigidbody> ();
 
 		wp = FindObjectOfType<Waypoint> ().GetComponent<Waypoint> ();
-
+		initialSpeed = speed;
 		//		agent = GetComponent<NavMeshAgent>();
 		start = false;
 
@@ -91,7 +94,12 @@ public class Inky : MonoBehaviour {
 		//		print (distances.IndexOf (distances.Min ()));
 		List<Vector3> nextList = wp.waypoints_dict [pos];
 
-		nextPoint = nextList [distances.IndexOf (distances.Min ())];
+		if (frightened) {
+			int num = Random.Range (0, nextList.Count ()-1);
+			nextPoint = nextList[num];
+		} else {
+			nextPoint = nextList [distances.IndexOf (distances.Min ())];
+		}			
 
 		remainingDistance =Vector3.Distance(transform.position, nextPoint);
 
