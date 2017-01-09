@@ -42,7 +42,12 @@ public class Blinky : MonoBehaviour {
 			trueGoal = goal.position;
 		}
 		remainingDistance =Vector3.Distance(transform.position, nextPoint);
-		if (remainingDistance < 0.5f) {
+
+		if (remainingDistance < 0.5f & (transform.position.x < -50f || transform.position.x > 50f)) {
+			transform.position = new Vector3 (-transform.position.x, transform.position.y, transform.position.z);
+			MoveTo (nextPoint);
+
+		} else if (remainingDistance < 0.5f) {
 //			agent.destination = nextPoint;
 			MoveTo (nextPoint);
 

@@ -17,6 +17,9 @@ public class Movement : MonoBehaviour {
 //			print ("triggered");
 			transform.position = transform.position + Camera.main.transform.forward * speed * Time.deltaTime;
 		}
+		if (transform.position.x < -50f || transform.position.x > 50f) {
+			transform.position = new Vector3 (-transform.position.x, transform.position.y, transform.position.z);
+		}
 
 	}
 }

@@ -12,3 +12,5 @@
 /Users/matteoziff/Development/Unity/PacmanVR-True/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/matteoziff/Development/Unity/PacmanVR-True/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/matteoziff/Development/Unity/PacmanVR-True/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/matteoziff/Development/Unity/PacmanVR-True/Temp/bin/Debug/Assembly-CSharp-firstpass.dll
+/Users/matteoziff/Development/Unity/PacmanVR-True/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb

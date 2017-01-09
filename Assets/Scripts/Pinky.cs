@@ -45,10 +45,13 @@ public class Pinky : MonoBehaviour {
 		if (start) {
 
 			remainingDistance = Vector3.Distance (transform.position, nextPoint);
-			if (remainingDistance < 0.5f) {
-				//			agent.destination = nextPoint;
+			if (remainingDistance < 0.5f & (transform.position.x < -50f || transform.position.x > 50f)) {
+				transform.position = new Vector3 (-transform.position.x, transform.position.y, transform.position.z);
 				MoveTo (nextPoint);
 
+			} else if (remainingDistance < 0.5f) {
+				//			agent.destination = nextPoint;
+				MoveTo (nextPoint);
 			} else {
 				transform.position += transform.forward * Time.deltaTime * speed;
 			}
