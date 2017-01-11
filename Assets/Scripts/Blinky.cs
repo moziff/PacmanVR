@@ -9,6 +9,7 @@ public class Blinky : MonoBehaviour {
 	public float speed=6.8f;
 	public float initialSpeed;
 	public Transform scatterGoal;
+	public Material origMaterial;
 
 	private Waypoint wp;
 	private Vector3 nextPoint;
@@ -17,13 +18,14 @@ public class Blinky : MonoBehaviour {
 	private float dirNum;
 	private float frontNum;
 
+
 	private Vector3 trueGoal;
 
 	public bool scatter=false;
 	public bool frightened=false;
 	// Use this for initialization
 	void Start () {
-		
+		origMaterial = transform.GetChild(0).GetChild(0).GetComponent<Renderer> ().material;
 		rb = GetComponent<Rigidbody> ();
 
 		wp = FindObjectOfType<Waypoint> ().GetComponent<Waypoint> ();

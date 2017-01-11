@@ -5,7 +5,6 @@ public class Movement : MonoBehaviour {
 
 	public float speed=8;
 	private Rigidbody rb;
-	private 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();

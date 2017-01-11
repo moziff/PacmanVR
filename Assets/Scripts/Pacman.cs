@@ -28,6 +28,21 @@ public class Pacman : MonoBehaviour {
 			col.gameObject.GetComponent<PowerPellet> ().SuperPower ();
 			sk.IncrementScore (col.gameObject.GetComponent<PowerPellet> ().value);
 			Destroy (col.gameObject);
+		} else if (col.gameObject.GetComponent<Ghost>()& ghosts.frightened){
+			col.transform.GetChild (0).GetChild (0).gameObject.SetActive (false);
+			if (ghosts.ghostsKilled == 0) {
+				sk.IncrementScore (200);
+				ghosts.ghostsKilled++;
+			} else if (ghosts.ghostsKilled == 1) {
+				sk.IncrementScore (400);
+				ghosts.ghostsKilled++;
+			} else if (ghosts.ghostsKilled == 2) {
+				sk.IncrementScore (800);
+				ghosts.ghostsKilled++;
+			} else if (ghosts.ghostsKilled == 3) {
+				sk.IncrementScore (1600);
+				ghosts.ghostsKilled++;
+			}
 		}
 	}
 }
