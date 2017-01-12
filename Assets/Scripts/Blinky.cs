@@ -8,8 +8,10 @@ public class Blinky : MonoBehaviour {
 	public Transform goal;
 	public float speed=6.8f;
 	public float initialSpeed;
+	public float frightenedSpeed;
 	public Transform scatterGoal;
 	public Material origMaterial;
+	public bool death = false;
 
 	private Waypoint wp;
 	private Vector3 nextPoint;
@@ -17,6 +19,7 @@ public class Blinky : MonoBehaviour {
 	private float remainingDistance;
 	private float dirNum;
 	private float frontNum;
+	private bool start = false;
 
 
 	private Vector3 trueGoal;
@@ -30,7 +33,7 @@ public class Blinky : MonoBehaviour {
 
 		wp = FindObjectOfType<Waypoint> ().GetComponent<Waypoint> ();
 		initialSpeed = speed;
-//		agent = GetComponent<NavMeshAgent>();
+		frightenedSpeed = .5f * speed;
 		scatter = false;
 		nextPoint = wp.waypoints_list [66];
 
@@ -42,9 +45,19 @@ public class Blinky : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		remainingDistance =Vector3.Distance(transform.position, nextPoint);
+		print (speed);
+		if (death) {
+			deathSequence ();
+		}
 
+		if (frightened) {
+			print ("frightened");
+			speed = frightenedSpeed;
+		} else {
+			speed = initialSpeed;
+		}
+
+		remainingDistance =Vector3.Distance(transform.position, nextPoint);
 		if (remainingDistance < 0.5f & (transform.position.x < -50f || transform.position.x > 50f)) {
 			transform.position = new Vector3 (-transform.position.x, transform.position.y, transform.position.z);
 			MoveTo (nextPoint);
@@ -121,5 +134,30 @@ public class Blinky : MonoBehaviour {
 
 	public void FrightenedGhost(){
 		speed = speed * .5f;
+	}
+
+
+	IEnumerator DeathFuntion(){
+		nextPoint = wp.waypoints_list [66];
+
+		yield return new WaitForSeconds (1);
+
+		MoveTo (nextPoint);
+		start = true;
+	}
+
+	public void deathSequence(){
+		death = true;
+		if (Vector3.Distance (transform.position, wp.waypoints_list [67]) < .3f) {
+			death = false;
+			transform.position = wp.waypoints_list [67];
+			transform.GetChild (0).GetChild (0).gameObject.SetActive (true);
+			nextPoint = wp.waypoints_list [66];
+			StartCoroutine (DeathFuntion());
+		} else {
+			transform.LookAt (wp.waypoints_list [67]);
+			transform.position += transform.forward * Time.deltaTime * speed;
+		}
+
 	}
 }

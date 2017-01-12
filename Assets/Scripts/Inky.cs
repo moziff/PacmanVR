@@ -8,8 +8,10 @@ public class Inky : MonoBehaviour {
 	public Transform blinky;
 	public float speed=6.5f;
 	public float initialSpeed;
+	public float frightenedSpeed;
 	public Transform scatterGoal;
 	public Material origMaterial;
+	public bool death = false;
 
 	private Waypoint wp;
 	private Vector3 nextPoint;
@@ -29,6 +31,7 @@ public class Inky : MonoBehaviour {
 
 		wp = FindObjectOfType<Waypoint> ().GetComponent<Waypoint> ();
 		initialSpeed = speed;
+		frightenedSpeed = .5f * speed;
 		//		agent = GetComponent<NavMeshAgent>();
 		start = false;
 
@@ -46,6 +49,10 @@ public class Inky : MonoBehaviour {
 			trueGoal = scatterGoal.position;
 		} else {
 			trueGoal = (blinky.position + goal.position) * 2;
+		}
+
+		if (death) {
+			deathSequence ();
 		}
 
 		if (start) {
@@ -128,5 +135,29 @@ public class Inky : MonoBehaviour {
 
 		MoveTo (nextPoint);
 		start = true;
+	}
+
+	IEnumerator DeathFuntion(){
+		nextPoint = wp.waypoints_list [66];
+
+		yield return new WaitForSeconds (6);
+
+		MoveTo (nextPoint);
+		start = true;
+	}
+
+	public void deathSequence(){
+		death = true;
+		if (Vector3.Distance (transform.position, wp.waypoints_list [67]) < .3f) {
+			death = false;
+			transform.position = wp.waypoints_list [67];
+			transform.GetChild (0).GetChild (0).gameObject.SetActive (true);
+			nextPoint = wp.waypoints_list [66];
+			StartCoroutine (DeathFuntion());
+		} else {
+			transform.LookAt (wp.waypoints_list [67]);
+			transform.position += transform.forward * Time.deltaTime * speed;
+		}
+
 	}
 }

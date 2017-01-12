@@ -23,13 +23,25 @@ public class Pacman : MonoBehaviour {
 			sk.IncrementScore (col.gameObject.GetComponent<Biscuit> ().value);
 //			GetComponent<Movement>().speed=.9*GetComponent<Movement>().speed
 			Destroy (col.gameObject);
+
 		} else if (col.gameObject.GetComponent<PowerPellet> ()) {
 			ghosts.Frightened ();
 			col.gameObject.GetComponent<PowerPellet> ().SuperPower ();
 			sk.IncrementScore (col.gameObject.GetComponent<PowerPellet> ().value);
 			Destroy (col.gameObject);
+
+			//DEATH
 		} else if (col.gameObject.GetComponent<Ghost>()& ghosts.frightened){
 			col.transform.GetChild (0).GetChild (0).gameObject.SetActive (false);
+			if (col.gameObject.GetComponent<Blinky> ()) {
+				col.gameObject.GetComponent<Blinky> ().deathSequence ();
+			} else if (col.gameObject.GetComponent<Pinky> ()){
+				col.gameObject.GetComponent<Pinky> ().deathSequence ();
+			} else if (col.gameObject.GetComponent<Inky> ()){
+				col.gameObject.GetComponent<Inky> ().deathSequence ();
+			} else if (col.gameObject.GetComponent<Clyde> ()){
+				col.gameObject.GetComponent<Clyde> ().deathSequence ();
+			}
 			if (ghosts.ghostsKilled == 0) {
 				sk.IncrementScore (200);
 				ghosts.ghostsKilled++;
